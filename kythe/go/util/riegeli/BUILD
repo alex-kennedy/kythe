@@ -3,8 +3,6 @@ load("//kythe/proto:go.bzl", "go_kythe_proto")
 load("//tools:build_rules/shims.bzl", "go_library", "go_test")
 load("//:visibility.bzl", "PUBLIC_VISIBILITY")
 
-package(default_visibility = PUBLIC_VISIBILITY)
-
 go_library(
     name = "riegeli",
     srcs = [
@@ -17,6 +15,7 @@ go_library(
         "util.go",
         "writer.go",
     ],
+    visibility = [PUBLIC_VISIBILITY],
     deps = [
         "//third_party/riegeli:records_metadata_go_proto",
         "@com_github_datadog_zstd//:go_default_library",
